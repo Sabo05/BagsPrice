@@ -9,12 +9,18 @@
         try {
             $stmt = $conn->prepare("DELETE FROM borse WHERE ID IN ($placeholders)");
             $stmt->execute($ids);
-            header("Location: borse.php?deleted=1"); // Cambia "borse.php" con il nome corretto della pagina se diverso
+            $_SESSION['success_message'] = "Borsa/e eliminati con successo.";
+            header("Location: ../index.php");
             exit;
         } catch (PDOException $e) {
-            die("Errore durante l'eliminazione delle borse: " . $e->getMessage());
+            // Salva l'errore in sessione
+            $_SESSION['error_message'] = "Errore durante l'eliminazione delle borse.";
+            header("Location: ../index.php");
+            exit;
         }
     } else {
+        // In caso non ci siano ID da eliminare, puoi decidere di mostrare comunque un errore
+        $_SESSION['error_message'] = "Nessun elemento selezionato per l'eliminazione.";
         header("Location: ../index.php");
         exit;
     }

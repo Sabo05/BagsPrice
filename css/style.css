@@ -94,27 +94,6 @@ table tr:hover {
     background-color: #e60000;
 }
 
-.success-message, .error-message {
-    width: 30%;
-    margin: 10px auto;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.success-message {
-    background-color: #2e7d32;
-    color: #e4e4e4;
-    border: 1px solid #4CAF50;
-}
-
-.error-message {
-    background-color: #a94442;
-    color: #f9d6d5;
-    border: 1px solid #e60000;
-}
-
 /* Bottone fluttuante per aggiungere note */
 .btn {
     position: fixed;
@@ -143,4 +122,162 @@ table tr:hover {
     padding-right: 5px;
     padding-left: 10px;
     width: 30px; /* opzionale per forzare larghezza */
+}
+
+/* Navbar (barra in alto) */
+.navbar {
+    padding: 15px;
+    background-color: #1c1c1c; /* Colore di sfondo della navbar */
+    width: 100%; /* Larghezza che tiene conto della sidebar */
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombra sotto la navbar */
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+/* Barra di ricerca */
+.search-bar {
+    padding: 10px;
+    width: 250px;
+    margin-right: 50px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar:hover, .search-bar:focus {
+    border: 1px solid #4CAF50; /* Colore di bordo verde al focus o hover */
+    box-shadow: 0 0 5px #4CAF50; /* Ombra verde al focus */
+    outline: none; /* Rimuove il contorno di default */
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Messaggi di stato con chiusura */
+.success-message, .error-message {
+    width: 30%;
+    margin: 10px auto;
+    padding: 15px 40px 15px 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.success-message {
+    background-color: #2e7d32;
+    color: #e4e4e4;
+    border: 1px solid #4CAF50;
+}
+
+.error-message {
+    background-color: #a94442;
+    color: #f9d6d5;
+    border: 1px solid #e60000;
+}
+
+/* Pulsante di chiusura "X" */
+.close-message {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-message:hover {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .container{
+        width: 90%;
+        margin: auto;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* centra gli elementi orizzontalmente */
+        padding: 10px 0;
+    }
+
+    .search-bar {
+        width: 90%;
+        margin: 10px auto; /* centra la barra anche verticalmente */
+    }
+
+    .header {
+        width: 95%;
+        text-align: center;
+    }
+
+    .delete-button {
+        position: static;
+        margin-top: 10px;
+        transform: none;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .success-message, .error-message {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .btn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .floating-button {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+}
+
+/* Media Queries per schermi molto piccoli */
+@media (max-width: 480px) {
+    table th, table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .delete-button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+    }
+
+    .floating-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
 }

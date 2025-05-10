@@ -85,3 +85,76 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Allinea il form verso l'alto */
+        align-items: center; /* Centra orizzontalmente */
+        padding: 20px 20px 0 20px; /* Rimuove il padding inferiore */
+        min-height: 100vh; /* Garantisce che il contenitore copra tutta la altezza della pagina */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 350px; /* Imposta una larghezza massima per il form */
+        padding: 20px;
+        box-shadow: none;
+        margin-top: 20px;
+    }
+
+    form {
+        gap: 15px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries per schermi molto piccoli */
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Allinea il form verso l'alto */
+        align-items: center; /* Centra orizzontalmente */
+        padding: 10px 10px 0 10px; /* Rimuove il padding inferiore */
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 350px; /* Imposta una larghezza massima per il form */
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input, button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
